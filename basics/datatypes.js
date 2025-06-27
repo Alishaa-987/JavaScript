@@ -20,16 +20,16 @@ const secondId = Symbol('123')
 console.log(id === secondId)   // the asner is false 
 
 
-1) Primitive Datatypes
-       Number => number
-       String  => string
-       Boolean  => boolean
-       null  => object
-       undefined  =>  undefined
-       Symbol  =>  symbol
-       BigInt  =>  bigint
+// 1) Primitive Datatypes
+//        Number => number
+//        String  => string
+//        Boolean  => boolean
+//        null  => object
+//        undefined  =>  undefined
+//        Symbol  =>  symbol
+//        BigInt  =>  bigint
 
-2) Non-primitive Datatypes
-       Arrays  =>  object
-       Function  =>  function
-       Object  =>  object
+// 2) Non-primitive Datatypes
+//        Arrays  =>  object
+//        Function  =>  function
+//        Object  =>  object
