@@ -17,7 +17,9 @@ NUll -> it type is object . Thats a value which is 0
 */
 
 //DATA TYPE CONVERSION
+
 /*
+                     STRING TO NUMBER
  Sometime we want to convert our data into another datatype and we can do it by easily like
  let age = 18
  console.log(typeof(age))
@@ -35,3 +37,33 @@ let age = "34"
 console.log(typeof( age))
 let value = Number(age)
 console.log(typeof value)
+
+
+
+/*
+NAN : not a number 
+Null : in ouput it give 0
+Undefined : the value not defined
+Boolean : output is 0 or 1
+if we want to conver the string in to the number it give NAN (not a number )
+
+
+
+
+but if we write 1 in a varaibale and want to convert that number in boolean type then on output it show us true
+                    ANY NUMBER TO  BOOLEAN CONVERTER
+0=> false
+1=> Ture
+" " => false
+"alisah" => True 
+
+
+
+
+                   STRING TO NUMBER
+ let val = "alisha"
+ let value = String(val)
+ console.log(value)
+*/
+
+
