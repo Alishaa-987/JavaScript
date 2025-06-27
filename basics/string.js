@@ -4,7 +4,7 @@ age = 20
 console.log( name + age + "and i am a girl" )
 
 
-// thsi is old way to concate stirng 
+// this is old way to concate stirng 
 // right now we use string interpolation by using backticks
 console.log(`Hello my name is ${name} and  my age is ${age} and i am a girl`)
 
