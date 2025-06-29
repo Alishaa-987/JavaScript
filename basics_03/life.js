@@ -12,7 +12,6 @@
 
 
 // in case of arrwo function we write it like that and also give parameters
-
 ( (name) => {
     console.log(`DB CONNECTED TWO ${name}`);
 } )('hitesh')
