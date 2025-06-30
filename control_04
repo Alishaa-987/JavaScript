@@ -1,0 +1,102 @@
+// for loop , while loop , do while loop , for each loop , for in loop
+
+// map , filter , reduce 
+
+
+// 🌀 1. LOOPS: "Repeat Until Done"
+// 💡 Definition:
+// Loops are like a robot that repeats your task again and again, until you tell it to stop.
+
+// 🔧 Purpose:
+// When you want to do something many times, like greeting 5 people, printing numbers from 1 to 100, or going through a list of names.
+
+// 📦 Types of Loops (with daily-life example and code):
+// 🔁 for loop — Best for counting
+// Imagine you want to say Hello to 5 people:
+
+
+for (let i = 1; i <= 5; i++) {
+  console.log("Hello Person", i);
+ }
+// 🧠 Think of it like:
+
+// “Start from 1, go till 5, move one step at a time → Do this job.”
+
+// 🔄 while loop — Best for doing until a condition fails
+// Example: “Keep eating pizza while you’re hungry.”
+
+
+ let hungry = true;
+ let slices = 3;
+
+ while (slices > 0) {
+   console.log("Eating pizza...");
+   slices--;
+ }
+// Do it while condition is true.
+
+// 🔂 do...while — Do it once at least, then check.
+
+ let num = 1;
+
+ do {
+   console.log("Printed at least once");
+   num++;
+ } while (num <= 3);
+// 🗺️ 2. MAP — "Make New Copy with Changes"
+// 💡 Definition:
+// .map() is like a magic copy machine 🖨️ that transforms each item in a list and gives you a brand-new list.
+
+// 🔧 Purpose:
+// Use it when you want to change/modify every item in an array and get a new array.
+
+// 📦 Example:
+// Imagine you have prices in dollars and you want to convert them to rupees:
+
+
+ const dollars = [1, 5, 10];
+ const rupees = dollars.map((d) => d * 278);
+ console.log(rupees); // [278, 1390, 2780]
+//  You mapped each dollar to rupees!
+
+// 🧹 3. FILTER — "Pick What You Want"
+// 💡 Definition:
+// .filter() is like a sieve or strainer that removes what you don’t want and keeps only the matching items.
+
+// 🔧 Purpose:
+// Use it to choose items that pass a test/condition.
+
+// 📦 Example:
+// Pick even numbers from a list:
+
+
+ const nums = [1, 2, 3, 4, 5];
+ const evens = nums.filter((n) => n % 2 === 0);
+ console.log(evens); // [2, 4]
+// Like “keep only the numbers that are even.”
+
+// 🧮 4. REDUCE — "Summarize Everything"
+// 💡 Definition:
+// .reduce() is a collector that takes a whole list and squashes it into one single value (sum, product, etc.)
+
+// 🔧 Purpose:
+// When you want one final result from a list (like total, average, product).
+
+
+const numss = [1, 2, 3, 4];
+const total = numss.reduce((sum, n) => sum + n, 0);
+console.log(total); // 10
+
+
+
+
+
+
+
+// | Method     | Mnemonic 💭                 | Real-Life Example            | Use When...                       |
+// | ---------- | --------------------------- | ---------------------------- | --------------------------------- |
+// | **for**    | Count from A to B           | Greet 10 people              | You know how many times           |
+// | **while**  | Do until condition is false | Keep eating till you’re full | You don’t know how many times     |
+// | **map**    | Modify All & Return New     | Convert dollars → rupees     | You want to **change all** values |
+// | **filter** | Keep What You Want          | Keep even numbers            | You want to **choose** items      |
+// | **reduce** | Combine All into One        | Sum total money              | You want **one final result**     |
