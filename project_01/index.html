@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beautiful Buttons</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="btn" id="pink">Button 1</button>
+    <button class="btn" id="teal">Button 2</button>
+    <button class="btn" id="darkblue">Button 3</button>
+    <button class="btn" id="salmon">Button 4</button>
+    <button class="btn" id="purple">Button 5</button>
+    <button class="btn" id="seagreen">Button 6</button>
+  </div>
+
+  <script>
+    console.log("hitesh");
+    const buttons = document.querySelectorAll('.btn');
+    const body = document.querySelector('body');
+
+    buttons.forEach(function (button) {
+      console.log(button);
+      button.addEventListener('click', function (e) {
+        console.log(e);
+        console.log(e.target);
+
+        if (e.target.id === 'pink') {
+          body.style.backgroundColor = '#FF6B6B';
+        }
+        if (e.target.id === 'teal') {
+          body.style.backgroundColor = '#4ECDC4';
+        }
+        if (e.target.id === 'darkblue') {
+          body.style.backgroundColor = '#1A535C';
+        }
+        if (e.target.id === 'salmon') {
+          body.style.backgroundColor = '#FFA07A';
+        }
+        if (e.target.id === 'purple') {
+          body.style.backgroundColor = '#6A5ACD';
+        }
+        if (e.target.id === 'seagreen') {
+          body.style.backgroundColor = '#20B2AA';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
