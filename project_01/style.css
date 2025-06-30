@@ -1,0 +1,38 @@
+/* Base styling */
+body {
+  background-color: #f0f4f8;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Container layout */
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Button styling */
+.btn {
+  padding: 15px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: none; /* No hover effect */
+}
+
+/* Individual button colors */
+.btn:nth-child(1) { background-color: #FF6B6B; }
+.btn:nth-child(2) { background-color: #4ECDC4; }
+.btn:nth-child(3) { background-color: #1A535C; }
+.btn:nth-child(4) { background-color: #FFA07A; }
+.btn:nth-child(5) { background-color: #6A5ACD; }
+.btn:nth-child(6) { background-color: #20B2AA; }
