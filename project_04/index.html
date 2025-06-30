@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Guess the Number Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>🎯 Guess the Number</h1>
+    <p>Guess a number between 1 and 100</p>
+    
+    <form id="guessForm">
+      <input type="number" id="guessInput" placeholder="Enter your guess" required min="1" max="100" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="result"></div>
+    <div id="previousGuesses"><strong>Guesses:</strong> <span id="guessesArray">None</span></div>
+    <div id="attemptsLeft"><strong>Attempts Left:</strong> <span id="attemptCount">10</span></div>
+  </div>
+
+  <script>
+    let randomNumber = Math.floor(Math.random() * 100) + 1;
+
+const guessForm = document.querySelector('#guessForm');
+const guessInput = document.querySelector('#guessInput');
+const result = document.querySelector('#result');
+const guessesArrayDisplay = document.querySelector('#guessesArray');
+const attemptCount = document.querySelector('#attemptCount');
+
+let previousGuesses = [];
+let attemptsLeft = 10;
+let gameOver = false;
+
+guessForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  if (gameOver) return;
+
+  const guess = parseInt(guessInput.value);
+  guessInput.value = '';
+
+  if (isNaN(guess) || guess < 1 || guess > 100) {
+    result.textContent = ' Please enter a number between 1 and 100.';
+    return;
+  }
+
+  previousGuesses.push(guess);
+  attemptsLeft--;
+
+  guessesArrayDisplay.textContent = previousGuesses.join(', ');
+  attemptCount.textContent = attemptsLeft;
+
+  if (guess === randomNumber) {
+    result.textContent = ` Correct! You guessed the number ${randomNumber}!`;
+    result.style.color = 'green';
+    endGame();
+  } else if (attemptsLeft === 0) {
+    result.textContent = ` Game Over! The number was ${randomNumber}.`;
+    result.style.color = 'red';
+    endGame();
+  } else if (guess < randomNumber) {
+    result.textContent = ` Too low! Try again.`;
+    result.style.color = '#d9534f';
+  } else {
+    result.textContent = ` Too high! Try again.`;
+    result.style.color = '#d9534f';
+  }
+});
+
+function endGame() {
+  gameOver = true;
+  guessInput.disabled = true;
+
+  const newGameBtn = document.createElement('button');
+  newGameBtn.textContent = ' Start New Game';
+  newGameBtn.classList.add('new-game');
+  newGameBtn.style.marginTop = '20px';
+  result.appendChild(document.createElement('br'));
+  result.appendChild(newGameBtn);
+
+  newGameBtn.addEventListener('click', function () {
+    resetGame();
+  });
+}
+
+function resetGame() {
+  randomNumber = Math.floor(Math.random() * 100) + 1;
+  previousGuesses = [];
+  attemptsLeft = 10;
+  gameOver = false;
+  guessInput.disabled = false;
+  guessesArrayDisplay.textContent = 'None';
+  attemptCount.textContent = attemptsLeft;
+  result.innerHTML = '';
+}
+
+  </script>
+</body>
+</html>
